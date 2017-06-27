@@ -1,12 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ShipMovement : MonoBehaviour {
 
 	private Rigidbody2D rb;
 	private float maxForce = 3f;
 	private float force = 0f;
+
+	private float gravity = 0f;
 
 	// Use this for initialization
 	void Start () {
@@ -25,7 +26,7 @@ public class ShipMovement : MonoBehaviour {
 			if(force <= maxForce){
 				rb.gravityScale = 0;
 				rb.AddRelativeForce (Vector2.up * 0.1f);
-				force += 0.1f;
+				force += 0.02f;
 			}
 
 		} else {
@@ -37,5 +38,15 @@ public class ShipMovement : MonoBehaviour {
 		}
 	}
 
-
+	void OnCollisionEnter2D(Collision2D col){
+		if (col.gameObject.tag == "Points") {
+			if(transform.rotation.z >= 0.005f || transform.rotation.z <= -0.005f){
+				Destroy (gameObject);
+				SceneManager.LoadScene("Menu");
+			}
+		} else if(col.gameObject.name == "Mapa") {
+			Destroy (gameObject);
+			SceneManager.LoadScene("Menu");
+		}
+	}
 }

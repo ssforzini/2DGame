@@ -7,11 +7,7 @@ public class PointsPlaces : MonoBehaviour {
 	private int score = 0;
 
 	void Start(){
-		if (SceneManager.GetActiveScene().name == "FirstLevel") {
-			
-		} else {
-			score = PlayerPrefs.GetInt ("HiScore");
-		}
+		score = PlayerPrefs.GetInt ("HiScore");
 	}
 
 	// Update is called once per frame
@@ -24,8 +20,8 @@ public class PointsPlaces : MonoBehaviour {
 			Debug.Log (score);
 
 			PlayerPrefs.SetInt("HiScore",score);
-			Scene scene = SceneManager.GetActiveScene();
-			SceneManager.LoadScene(scene.name);
+			/*Scene scene = SceneManager.GetActiveScene();
+			SceneManager.LoadScene(scene.name);*/
 		}
 	}
 		
