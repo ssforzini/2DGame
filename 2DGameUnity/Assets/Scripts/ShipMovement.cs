@@ -6,10 +6,15 @@ public class ShipMovement : MonoBehaviour {
 	private Rigidbody2D rb;
 	private float maxForce = 3f;
 	private float force = 0f;
+	private GameObject audio;
+
+	private bool destroyed;
 
 	// Use this for initialization
 	void Start () {
+		destroyed = false;
 		rb = GetComponent<Rigidbody2D> ();
+		audio = GameObject.Find ("Music");
 	}
 
 	// Update is called once per frame
@@ -32,6 +37,7 @@ public class ShipMovement : MonoBehaviour {
 		}
 
 		if(Input.GetKey(KeyCode.Escape)){
+			destroyAction ();
 			SceneManager.LoadScene("Menu");
 		}
 
@@ -41,20 +47,27 @@ public class ShipMovement : MonoBehaviour {
 	}
 
 	void Update(){
-		//Debug.Log (transform.rotation.z);
 	}
 
 	void OnCollisionEnter2D(Collision2D col){
 		if (col.gameObject.tag == "Points") {
-			Debug.Log (transform.rotation.z);
-
 			if(transform.rotation.z >= 0.1f || transform.rotation.z <= -0.1f){
-				Destroy (gameObject);
-				SceneManager.LoadScene("Menu");
+				destroyAction ();
 			}
 		} else if(col.gameObject.name == "Mapa") {
-			Destroy (gameObject);
-			SceneManager.LoadScene("Menu");
+			destroyAction ();
 		}
+	}
+
+	public bool getDestroyed(){
+		return destroyed;
+	}
+
+	private void destroyAction(){
+		
+		destroyed = true;
+		Destroy (gameObject);
+		Destroy (audio);
+		SceneManager.LoadScene("Menu");		
 	}
 }

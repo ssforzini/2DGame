@@ -1,0 +1,86 @@
+Initialize engine version: 5.5.2f1 (3829d7f588f3)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GT 740 (ID=0xfc8)
+    Vendor:   NVIDIA
+    VRAM:     2018 MB
+    Driver:   22.21.13.8233
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\51\Documents\2DGame\2DGameUnity\Ejecutable\LunarLanderSforzini_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\51\Documents\2DGame\2DGameUnity\Ejecutable\LunarLanderSforzini_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\51\Documents\2DGame\2DGameUnity\Ejecutable\LunarLanderSforzini_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\51\Documents\2DGame\2DGameUnity\Ejecutable\LunarLanderSforzini_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\51\Documents\2DGame\2DGameUnity\Ejecutable\LunarLanderSforzini_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\51\Documents\2DGame\2DGameUnity\Ejecutable\LunarLanderSforzini_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\51\Documents\2DGame\2DGameUnity\Ejecutable\LunarLanderSforzini_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\51\Documents\2DGame\2DGameUnity\Ejecutable\LunarLanderSforzini_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\51\Documents\2DGame\2DGameUnity\Ejecutable\LunarLanderSforzini_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\51\Documents\2DGame\2DGameUnity\Ejecutable\LunarLanderSforzini_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+Platform assembly: C:\Users\51\Documents\2DGame\2DGameUnity\Ejecutable\LunarLanderSforzini_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\51\Documents\2DGame\2DGameUnity\Ejecutable\LunarLanderSforzini_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.028 seconds
+Platform assembly: C:\Users\51\Documents\2DGame\2DGameUnity\Ejecutable\LunarLanderSforzini_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\51\Documents\2DGame\2DGameUnity\Ejecutable\LunarLanderSforzini_Data\Managed\System.dll (this message is harmless)
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 2.101854 ms
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.815883 ms
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 242.
+Total: 0.180512 ms (FindLiveObjects: 0.042562 ms CreateObjectMapping: 0.009961 ms MarkObjects: 0.117121 ms  DeleteObjects: 0.010263 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.350460 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 326.
+Total: 0.297332 ms (FindLiveObjects: 0.025960 ms CreateObjectMapping: 0.026261 ms MarkObjects: 0.238771 ms  DeleteObjects: 0.005735 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.544254 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 326.
+Total: 0.294012 ms (FindLiveObjects: 0.026261 ms CreateObjectMapping: 0.027771 ms MarkObjects: 0.233338 ms  DeleteObjects: 0.006037 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.550053 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 326.
+Total: 0.273485 ms (FindLiveObjects: 0.022337 ms CreateObjectMapping: 0.028374 ms MarkObjects: 0.217339 ms  DeleteObjects: 0.005131 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.533387 ms
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 290.
+Total: 0.668319 ms (FindLiveObjects: 0.026563 ms CreateObjectMapping: 0.028676 ms MarkObjects: 0.259600 ms  DeleteObjects: 0.352573 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.294012 ms
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 243.
+Total: 0.180814 ms (FindLiveObjects: 0.025356 ms CreateObjectMapping: 0.020828 ms MarkObjects: 0.123762 ms  DeleteObjects: 0.010565 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.336574 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 326.
+Total: 0.284956 ms (FindLiveObjects: 0.025960 ms CreateObjectMapping: 0.028978 ms MarkObjects: 0.224282 ms  DeleteObjects: 0.005433 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.603721 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 326.
+Total: 0.314840 ms (FindLiveObjects: 0.026865 ms CreateObjectMapping: 0.028374 ms MarkObjects: 0.252355 ms  DeleteObjects: 0.006339 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.513766 ms
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 290.
+Total: 0.617304 ms (FindLiveObjects: 0.022639 ms CreateObjectMapping: 0.028073 ms MarkObjects: 0.246318 ms  DeleteObjects: 0.319670 ms)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 17f0 -> priority: 1 
+  Thread -> id: 1b6c -> priority: 1 
