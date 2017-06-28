@@ -7,8 +7,6 @@ public class ShipMovement : MonoBehaviour {
 	private float maxForce = 3f;
 	private float force = 0f;
 
-	private float gravity = 0f;
-
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
@@ -33,14 +31,24 @@ public class ShipMovement : MonoBehaviour {
 			rb.gravityScale = 0.05f;
 		}
 
+		if(Input.GetKey(KeyCode.Escape)){
+			SceneManager.LoadScene("Menu");
+		}
+
 		if (!Input.anyKey) {
 			force -= 0.1f;
 		}
 	}
 
+	void Update(){
+		//Debug.Log (transform.rotation.z);
+	}
+
 	void OnCollisionEnter2D(Collision2D col){
 		if (col.gameObject.tag == "Points") {
-			if(transform.rotation.z >= 0.005f || transform.rotation.z <= -0.005f){
+			Debug.Log (transform.rotation.z);
+
+			if(transform.rotation.z >= 0.1f || transform.rotation.z <= -0.1f){
 				Destroy (gameObject);
 				SceneManager.LoadScene("Menu");
 			}

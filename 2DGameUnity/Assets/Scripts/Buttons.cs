@@ -22,7 +22,7 @@ public class Buttons : MonoBehaviour {
 	}
 
 	void PlayClick(){
-		PlayerPrefs.SetInt("HiScore",0);
-		SceneManager.LoadScene("FirstLevel");
+		PlayerPrefs.SetInt("score",0);
+		SceneManager.LoadScene("MusicScene");
 	}
 }
