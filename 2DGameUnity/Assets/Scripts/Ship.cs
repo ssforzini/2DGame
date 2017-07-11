@@ -12,6 +12,7 @@ public class Ship : MonoBehaviour {
 	private bool landed = false;
 	private bool forceCount = true;
 	private Text veloc;
+    private Vector3 velBeforePause;
 	private GameObject lvlMng;
 
 	//PAUSE
@@ -76,6 +77,7 @@ public class Ship : MonoBehaviour {
 			}
 
 			if(Input.GetKey(KeyCode.P)){
+                velBeforePause = rb.velocity;
 				pauseOption(true,true);
 			}
 			//END MOVEMENT
@@ -139,6 +141,7 @@ public class Ship : MonoBehaviour {
 		} else {
 			globalData.changeState ("play");
 			rb.constraints = RigidbodyConstraints2D.None;
+            rb.velocity = velBeforePause;
 		}
 
 
