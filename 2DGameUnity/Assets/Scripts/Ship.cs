@@ -14,6 +14,11 @@ public class Ship : MonoBehaviour {
 	private Text veloc;
     private Vector3 velBeforePause;
 	private GameObject lvlMng;
+    private bool pressingUp;
+    private bool pressingLeft;
+    private bool pressingRight;
+
+    private string lastButtonPress = "";
 
 	//PAUSE
 	private Image pauseImageBack;
@@ -61,25 +66,21 @@ public class Ship : MonoBehaviour {
 	void FixedUpdate () {
 		//MOVEMENT
 		if(globalData.getState() == "play"){
-			if(Input.GetKey(KeyCode.LeftArrow) && transform.rotation.z <= 0.7f){
-				transform.Rotate (Vector3.forward * 2f);
-			}
-			if(Input.GetKey(KeyCode.RightArrow) && transform.rotation.z >= -0.69f){
-				transform.Rotate (Vector3.back * 2f);
-			}
-			if (Input.GetKey (KeyCode.UpArrow)) {
-				rb.gravityScale = 0;
-				rb.AddRelativeForce (Vector2.up * 5f);
-				force = rb.velocity.y;
 
-			} else {
-				rb.gravityScale = 4f;
-			}
+            if (pressingLeft) {
+                rb.AddTorque(9f);
+            }
 
-			if(Input.GetKey(KeyCode.P)){
-                velBeforePause = rb.velocity;
-				pauseOption(true,true);
-			}
+            if (pressingRight) {
+                rb.AddTorque(-9f);
+            }
+
+            if (pressingUp) {
+                rb.gravityScale = 0;
+                rb.AddRelativeForce(Vector2.up * 5f);
+                force = rb.velocity.y;
+            }
+			
 			//END MOVEMENT
 		} 
 
@@ -89,7 +90,45 @@ public class Ship : MonoBehaviour {
 
 		//CONTEO DE LA VELOCIDAD CUANDO ESTA MOVIENDOSE Y CUANDO ATERRIZA
 		if(globalData.getState() == "play"){
-			if((!Input.GetKey (KeyCode.UpArrow)) && forceCount){
+
+            if (Input.GetKey(KeyCode.LeftArrow) && transform.rotation.z <= 0.7f){
+                if (lastButtonPress == "") {
+                    lastButtonPress = "Left";
+                } else if (lastButtonPress != "Left") {
+                    lastButtonPress = "Left";
+                    rb.angularVelocity = 0f;
+                }
+                pressingLeft = true;
+            } else {
+                pressingLeft = false;
+            }
+
+
+            if (Input.GetKey(KeyCode.RightArrow) && transform.rotation.z >= -0.69f){
+                if (lastButtonPress == "") {
+                    lastButtonPress = "Right";
+                } else if (lastButtonPress != "Right") {
+                    lastButtonPress = "Right";
+                    rb.angularVelocity = 0f;
+                }
+                pressingRight = true;
+            } else {
+                pressingRight = false;
+            }
+
+            if (Input.GetKey(KeyCode.UpArrow)) {
+                pressingUp = true;
+            } else {
+                pressingUp = false;
+                rb.gravityScale = 4f;
+            }
+
+            if (Input.GetKey(KeyCode.P)){
+                velBeforePause = rb.velocity;
+                pauseOption(true, true);
+            }
+
+            if ((!Input.GetKey (KeyCode.UpArrow)) && forceCount){
 				if (landed && force <= 0f) {
 					if (force >= 0f) {
 						force = 0f;
