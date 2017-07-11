@@ -10,10 +10,6 @@ public class Global : MonoBehaviour {
 		actualState = "play";
 	}
 
-	void Start(){
-		SceneManager.LoadScene("FirstLevel");
-	}
-
 	public void changeState(string _state){
 		actualState = _state;
 	}

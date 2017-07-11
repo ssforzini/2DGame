@@ -5,35 +5,27 @@ using UnityEngine.UI;
 public class PointsPlaces : MonoBehaviour {
 
 	[SerializeField]private int point;
-	private static int score = 0;
 	private Text scoreText;
-	private ShipMovement ship;
+	private Ship ship;
+	private LevelManager lvl;
 
 	void Start(){
-		ship = GameObject.Find ("Ship").GetComponent<ShipMovement>();
+		ship = GameObject.Find ("Ship").GetComponent<Ship>();
 		scoreText = GameObject.Find ("ScorePoint").GetComponent<Text> ();
-		scoreText.text = score.ToString();
-	}
-
-	void OnCollisionEnter2D(Collision2D col){
-		
+		scoreText.text = ship.getScore().ToString();
+		lvl = GameObject.Find ("LevelManager").GetComponent<LevelManager> ();
 	}
 
 	public void addPoints(){
 		if (!ship.getDestroyed ()) {
-			score += point;
-
-			SceneManager.LoadScene ("FirstLevel");
+			ship.scoreCalculation (true,point);
+			lvl.goNextLevel ();
 		} else {
-			if (PlayerPrefs.HasKey ("Highscore")) {
-				if (PlayerPrefs.GetInt ("Highscore") < score) {
-					PlayerPrefs.SetInt ("Highscore", score);
-				}
-			} else {
-				PlayerPrefs.SetInt ("Highscore", score);
-			}
-			score = 0;
+			ship.calculateHighscore();
+			lvl.resetLevel ();
 		}
 	}
-		
+
+
+
 }
